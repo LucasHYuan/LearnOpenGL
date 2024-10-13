@@ -1,0 +1,22 @@
+# Ignore Visual Studio temporary files
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.suo
+*.user
+*.ipch
+*.log
+*.tlog
+*.lastbuildstate
+
+# Ignore build directories
+x64/
+**/x64/
+Debug/
+Release/
+
+# Ignore Visual Studio specific project files
+.vscode/
+.vcxproj.user
+.vcxproj.filters
