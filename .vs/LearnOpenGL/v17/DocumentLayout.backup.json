@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Desktop\\LearnOpenGL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6839D75F-3478-481C-B4C3-84EA257ABE8B}|FirstOpenGL\\FirstOpenGL.vcxproj|D:\\Desktop\\LearnOpenGL\\FirstOpenGL\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6839D75F-3478-481C-B4C3-84EA257ABE8B}|FirstOpenGL\\FirstOpenGL.vcxproj|solutionrelative:FirstOpenGL\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6839D75F-3478-481C-B4C3-84EA257ABE8B}|FirstOpenGL\\FirstOpenGL.vcxproj|D:\\Desktop\\LearnOpenGL\\FirstOpenGL\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6839D75F-3478-481C-B4C3-84EA257ABE8B}|FirstOpenGL\\FirstOpenGL.vcxproj|solutionrelative:FirstOpenGL\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6839D75F-3478-481C-B4C3-84EA257ABE8B}|FirstOpenGL\\FirstOpenGL.vcxproj|D:\\Desktop\\LearnOpenGL\\FirstOpenGL\\VertexShader.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{6839D75F-3478-481C-B4C3-84EA257ABE8B}|FirstOpenGL\\FirstOpenGL.vcxproj|solutionrelative:FirstOpenGL\\VertexShader.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6839D75F-3478-481C-B4C3-84EA257ABE8B}|FirstOpenGL\\FirstOpenGL.vcxproj|D:\\Desktop\\LearnOpenGL\\FirstOpenGL\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6839D75F-3478-481C-B4C3-84EA257ABE8B}|FirstOpenGL\\FirstOpenGL.vcxproj|solutionrelative:FirstOpenGL\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6839D75F-3478-481C-B4C3-84EA257ABE8B}|FirstOpenGL\\FirstOpenGL.vcxproj|D:\\Desktop\\LearnOpenGL\\FirstOpenGL\\FragmentShader.fs||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{6839D75F-3478-481C-B4C3-84EA257ABE8B}|FirstOpenGL\\FirstOpenGL.vcxproj|solutionrelative:FirstOpenGL\\FragmentShader.fs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FragmentShader.fs",
+              "DocumentMoniker": "D:\\Desktop\\LearnOpenGL\\FirstOpenGL\\FragmentShader.fs",
+              "RelativeDocumentMoniker": "FirstOpenGL\\FragmentShader.fs",
+              "ToolTip": "D:\\Desktop\\LearnOpenGL\\FirstOpenGL\\FragmentShader.fs",
+              "RelativeToolTip": "FirstOpenGL\\FragmentShader.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-13T15:53:01.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\Desktop\\LearnOpenGL\\FirstOpenGL\\main.cpp",
+              "RelativeDocumentMoniker": "FirstOpenGL\\main.cpp",
+              "ToolTip": "D:\\Desktop\\LearnOpenGL\\FirstOpenGL\\main.cpp",
+              "RelativeToolTip": "FirstOpenGL\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-13T15:01:38.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VertexShader.vs",
+              "DocumentMoniker": "D:\\Desktop\\LearnOpenGL\\FirstOpenGL\\VertexShader.vs",
+              "RelativeDocumentMoniker": "FirstOpenGL\\VertexShader.vs",
+              "ToolTip": "D:\\Desktop\\LearnOpenGL\\FirstOpenGL\\VertexShader.vs",
+              "RelativeToolTip": "FirstOpenGL\\VertexShader.vs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-13T14:57:58.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Shader.h",
+              "DocumentMoniker": "D:\\Desktop\\LearnOpenGL\\FirstOpenGL\\Shader.h",
+              "RelativeDocumentMoniker": "FirstOpenGL\\Shader.h",
+              "ToolTip": "D:\\Desktop\\LearnOpenGL\\FirstOpenGL\\Shader.h",
+              "RelativeToolTip": "FirstOpenGL\\Shader.h",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACkAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-13T14:14:02.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "test.cpp",
+              "DocumentMoniker": "D:\\Desktop\\LearnOpenGL\\FirstOpenGL\\test.cpp",
+              "RelativeDocumentMoniker": "FirstOpenGL\\test.cpp",
+              "ToolTip": "D:\\Desktop\\LearnOpenGL\\FirstOpenGL\\test.cpp",
+              "RelativeToolTip": "FirstOpenGL\\test.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-12T20:48:29.741Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
