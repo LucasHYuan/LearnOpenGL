@@ -65,11 +65,12 @@ int main()
 #pragma region init shader and program
 	char vertexPath[] = "shaders/VertexShader.vs";
 	char fragmentPath[] = "shaders/FragmentShader.fs";
-	Shader ourShader(vertexPath, fragmentPath);
+	Shader lightingShader(vertexPath, fragmentPath);
 
 	char lightVertexPath[] = "shaders/LightVertexShader.vs";
+	int a = 0;
 	char lightFragmentPath[] = "shaders/LightFragmentShader.fs";
-	Shader lampShader(lightVertexPath, lightFragmentPath);
+	Shader cubeShader(lightVertexPath, lightFragmentPath);
 
 #pragma endregion 
 
@@ -179,18 +180,18 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		//activate shader
-		lampShader.use();
-		lampShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
-		lampShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
-		lampShader.setVec3("lightPos", lightPos);
-		lampShader.setVec3("viewPos", camera.Position);
+		cubeShader.use();
+		cubeShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
+		cubeShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
+		cubeShader.setVec3("lightPos", lightPos);
+		cubeShader.setVec3("viewPos", camera.Position);
 		// pass projection matrix 
 		glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), WINDOW_WIDTH / WINDOW_HEIGHT,
 			NEAR_PLANE, FAR_PLANE);
-		lampShader.setMat4("projection", projection);
+		cubeShader.setMat4("projection", projection);
 		// camera/view transform
 		glm::mat4 view = camera.GetViewMatrix();
-		lampShader.setMat4("view", view);
+		cubeShader.setMat4("view", view);
 
 		glBindVertexArray(cubeVAO);
 		for (unsigned int i = 0; i < sizeof(cubePositions) / sizeof(glm::vec3); ++i) {
@@ -198,18 +199,18 @@ int main()
 			model = glm::translate(model, cubePositions[i]);
 			model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f),
 				glm::vec3(0.5f, 1.0f, 0.0f));
-			lampShader.setMat4("model", model);
+			cubeShader.setMat4("model", model);
 			glDrawArrays(GL_TRIANGLES, 0, 36);
 		}
 		glBindVertexArray(0);
 
-		ourShader.use();
-		ourShader.setMat4("projection", projection);
-		ourShader.setMat4("view", view);
+		lightingShader.use();
+		lightingShader.setMat4("projection", projection);
+		lightingShader.setMat4("view", view);
 		glm::mat4 model = glm::mat4();
 		model = glm::translate(model, lightPos);
 		model = glm::scale(model, glm::vec3(0.2f));
-		ourShader.setMat4("model", model);
+		lightingShader.setMat4("model", model);
 		glBindVertexArray(lightCubeVAO);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		glBindVertexArray(0);

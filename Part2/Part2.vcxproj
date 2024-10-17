@@ -142,9 +142,9 @@
     <ClInclude Include="includes\Shader.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="LightVertexShader.vs" />
     <None Include="shaders\FragmentShader.fs" />
     <None Include="shaders\LightFragmentShader.fs" />
+    <None Include="shaders\LightVertexShader.vs" />
     <None Include="shaders\VertexShader.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
