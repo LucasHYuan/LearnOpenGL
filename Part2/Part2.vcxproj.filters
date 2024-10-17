@@ -46,5 +46,8 @@
     <None Include="shaders\LightFragmentShader.fs">
       <Filter>Resource Files\shaders</Filter>
     </None>
+    <None Include="LightVertexShader.vs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

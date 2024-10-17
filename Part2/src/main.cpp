@@ -67,8 +67,10 @@ int main()
 	char fragmentPath[] = "shaders/FragmentShader.fs";
 	Shader ourShader(vertexPath, fragmentPath);
 
+	char lightVertexPath[] = "shaders/LightVertexShader.vs";
 	char lightFragmentPath[] = "shaders/LightFragmentShader.fs";
-	Shader lampShader(vertexPath, lightFragmentPath);
+	Shader lampShader(lightVertexPath, lightFragmentPath);
+
 #pragma endregion 
 
 #pragma region model matrix
@@ -87,83 +89,77 @@ int main()
 #pragma endregion
 
 #pragma region define shape data
-	unsigned int VBO;
-	glGenVertexArrays(1, &VBO);
-	unsigned int VAO;
-	glGenBuffers(1, &VAO);
-	unsigned int EBO;
-	glGenBuffers(1, &EBO);
-
-	glBindVertexArray(VAO);
 	float vertex[] = {
-		-0.5f, -0.5f, -0.5f,
-		0.5f, -0.5f, -0.5f,
-		0.5f, 0.5f, -0.5f,
-		0.5f, 0.5f, -0.5f,
-		-0.5f, 0.5f, -0.5f,
-		-0.5f, -0.5f, -0.5f,
+		// positions // normals // texture coords
+		-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f,
+		0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f,
+		0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 1.0f,
+		0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 1.0f, 1.0f,
+		-0.5f, 0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f,
+		-0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+		0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
+		0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
+		0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f,
+		-0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
+		-0.5f, -0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+		-0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+		-0.5f, 0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
+		-0.5f, -0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
+		-0.5f, 0.5f, 0.5f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
 
-		-0.5f, -0.5f, 0.5f,
-		0.5f, -0.5f, 0.5f,
-		0.5f, 0.5f, 0.5f,
-		0.5f, 0.5f, 0.5f,
-		-0.5f, 0.5f, 0.5f,
-		-0.5f, -0.5f, 0.5f,
-
-		-0.5f, 0.5f, 0.5f,
-		-0.5f, 0.5f, -0.5f,
-		-0.5f, -0.5f, -0.5f,
-		-0.5f, -0.5f, -0.5f,
-		-0.5f, -0.5f, 0.5f,
-		-0.5f, 0.5f, 0.5f,
-
-		0.5f, 0.5f, 0.5f,
-		0.5f, 0.5f, -0.5f,
-		0.5f, -0.5f, -0.5f,
-		0.5f, -0.5f, -0.5f,
-		0.5f, -0.5f, 0.5f,
-		0.5f, 0.5f, 0.5f,
-
-		-0.5f, -0.5f, -0.5f,
-		0.5f, -0.5f, -0.5f,
-		0.5f, -0.5f, 0.5f,
-		0.5f, -0.5f, 0.5f,
-		-0.5f, -0.5f, 0.5f,
-		-0.5f, -0.5f, -0.5f,
-
-		-0.5f, 0.5f, -0.5f,
-		0.5f, 0.5f, -0.5f,
-		0.5f, 0.5f, 0.5f,
-		0.5f, 0.5f, 0.5f,
-		-0.5f, 0.5f, 0.5f,
-		-0.5f, 0.5f, -0.5f,
+		0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+		0.5f, 0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
+		0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
+		0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f,
+		0.5f, -0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
+		0.5f, 0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f,
+		-0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f,
+		0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 1.0f,
+		0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f,
+		0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 1.0f, 0.0f,
+		-0.5f, -0.5f, 0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f,
+		-0.5f, -0.5f, -0.5f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f,
+		-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
+		0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
+		0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+		0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+		-0.5f, 0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
+		-0.5f, 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f
 	};
-	int indices[]{
-		0, 1, 2,
-		0, 3, 2
-	};
+
+	unsigned int VBO, cubeVAO;
+	glGenVertexArrays(1, &cubeVAO);
+	glGenBuffers(1, &VBO);
+
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertex), vertex, GL_STATIC_DRAW);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+	glBindVertexArray(cubeVAO);
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE,
-		3 * sizeof(float), (void*)0);
+		8 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE,
+		8 * sizeof(float), (void*)(3 * sizeof(float)));
+	glEnableVertexAttribArray(1);
+	
 
 #pragma endregion
-#pragma region lightVAO
-	unsigned int lightVAO;
-	glGenVertexArrays(1, &lightVAO);
-	glBindVertexArray(lightVAO);
+#pragma region lightCubeVAO
+	unsigned int lightCubeVAO;
+	glGenVertexArrays(1, &lightCubeVAO);
+	glBindVertexArray(lightCubeVAO);
+
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE,
-		3 * sizeof(float), (void*)0);
+		8 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
-	ourShader.use();
-	ourShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
-	ourShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
+	
 	
 #pragma endregion
 
@@ -171,7 +167,7 @@ int main()
 	while (!glfwWindowShouldClose(window))
 	{
 		// time frame logic
-		float currentTime = glfwGetTime();
+		float currentTime = static_cast<float>(glfwGetTime());
 		deltaTime = currentTime - lastFrame;
 		lastFrame = currentTime;
 
@@ -183,38 +179,38 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		//activate shader
-		ourShader.use();
-
+		lampShader.use();
+		lampShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
+		lampShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
+		lampShader.setVec3("lightPos", lightPos);
+		lampShader.setVec3("viewPos", camera.Position);
 		// pass projection matrix 
 		glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), WINDOW_WIDTH / WINDOW_HEIGHT,
 			NEAR_PLANE, FAR_PLANE);
-		ourShader.setMat4("projection", projection);
+		lampShader.setMat4("projection", projection);
 		// camera/view transform
 		glm::mat4 view = camera.GetViewMatrix();
-		ourShader.setMat4("view", view);
+		lampShader.setMat4("view", view);
 
-		glBindVertexArray(VAO);
+		glBindVertexArray(cubeVAO);
 		for (unsigned int i = 0; i < sizeof(cubePositions) / sizeof(glm::vec3); ++i) {
 			glm::mat4 model = glm::mat4(1.0f);
 			model = glm::translate(model, cubePositions[i]);
-			float angle = 20.0f * i;
 			model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f),
 				glm::vec3(0.5f, 1.0f, 0.0f));
-			model = glm::rotate(model, glm::radians(angle),
-				glm::vec3(1.0f, 0.3f, 0.5f));
-			ourShader.setMat4("model", model);
+			lampShader.setMat4("model", model);
 			glDrawArrays(GL_TRIANGLES, 0, 36);
 		}
 		glBindVertexArray(0);
 
-		lampShader.use();
-		lampShader.setMat4("projection", projection);
-		lampShader.setMat4("view", view);
+		ourShader.use();
+		ourShader.setMat4("projection", projection);
+		ourShader.setMat4("view", view);
 		glm::mat4 model = glm::mat4();
 		model = glm::translate(model, lightPos);
 		model = glm::scale(model, glm::vec3(0.2f));
-		lampShader.setMat4("model", model);
-		glBindVertexArray(lightVAO);
+		ourShader.setMat4("model", model);
+		glBindVertexArray(lightCubeVAO);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		glBindVertexArray(0);
 
@@ -223,7 +219,8 @@ int main()
 
 	}
 #pragma endregion 
-	glDeleteVertexArrays(1, &VAO);
+	glDeleteVertexArrays(1, &lightCubeVAO);
+	glDeleteVertexArrays(1, &cubeVAO);
 	glDeleteBuffers(1, &VBO);
 
 	glfwTerminate();
