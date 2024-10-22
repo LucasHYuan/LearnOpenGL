@@ -18,23 +18,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\OpenGL\includes\glad.c">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\OpenGL\includes\stb_image.h">
+    <ClCompile Include="..\includes\glad.c">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="includes\Camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="includes\Shader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\FragmentShader.fs">
@@ -49,5 +38,10 @@
     <None Include="shaders\LightVertexShader.vs">
       <Filter>Resource Files\shaders</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\includes\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

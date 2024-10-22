@@ -24,7 +24,7 @@ const float FAR_PLANE = 100.0f;
 Camera camera(0.0f, 0.0f, 6.0f);
 float lastX = 400, lastY = 300;
 bool firstMouse = true;
-const std::string TEXTURE_PATH = "textures/";
+const std::string TEXTURE_PATH = "../assets/textures/";
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);

@@ -72,7 +72,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\OpenGL\includes;$(IncludePath)</IncludePath>
+    <IncludePath>D:\OpenGL\includes;$(SolutionDir)includes;$(IncludePath)</IncludePath>
     <LibraryPath>D:\OpenGL\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -137,13 +137,12 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="stb_image.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="FragmentShader.fs" />
     <None Include="VertexShader.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\includes\Camera.h" />
+    <ClInclude Include="..\includes\Shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

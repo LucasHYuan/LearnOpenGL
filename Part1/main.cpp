@@ -24,7 +24,7 @@ const float FAR_PLANE = 100.0f;
 Camera camera(0.0f, 0.0f, 3.0f);
 float lastX = 400, lastY = 300;
 bool firstMouse = true;
-const std::string TEXTURE_PATH = "Assets/Texture/";
+const std::string TEXTURE_PATH = "../assets/textures/";
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 

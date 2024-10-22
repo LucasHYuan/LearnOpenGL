@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\OpenGL\includes;$(ProjectDir)includes;$(IncludePath)</IncludePath>
+    <IncludePath>D:\OpenGL\includes;$(SolutionDir)includes;$(IncludePath)</IncludePath>
     <LibraryPath>D:\OpenGL\libs;$(LibraryPath)</LibraryPath>
     <SourcePath>$(ProjectDir)src;$(SourcePath)</SourcePath>
   </PropertyGroup>
@@ -133,19 +133,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\OpenGL\includes\glad.c" />
+    <ClCompile Include="..\includes\glad.c" />
     <ClCompile Include="src\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\OpenGL\includes\stb_image.h" />
-    <ClInclude Include="includes\Camera.h" />
-    <ClInclude Include="includes\Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\FragmentShader.fs" />
     <None Include="shaders\LightFragmentShader.fs" />
     <None Include="shaders\LightVertexShader.vs" />
     <None Include="shaders\VertexShader.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\includes\stb_image.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
