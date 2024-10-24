@@ -195,7 +195,7 @@ int main()
 						GL_UNSIGNED_BYTE, data);
 			glGenerateMipmap(GL_TEXTURE_2D);
 			stbi_image_free(data);
-			std::string uniformName = "textures[" + std::to_string(i) + "]";
+			std::string uniformName = "texture1";
 			ourShader.setInt(uniformName.c_str(), i);
 		}
 	}

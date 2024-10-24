@@ -13,10 +13,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\shaders">
+      <UniqueIdentifier>{0dc40649-206d-42c7-b2f0-cc076f5492b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\includes\glad.c">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\blending.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\10.2.stencil_test.fs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.2.stencil_test.vs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.2.border.fs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.3.blending_blend.fs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.3.blending.vs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.3.blending_discard.fs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

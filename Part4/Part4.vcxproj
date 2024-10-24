@@ -20,6 +20,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\includes\glad.c" />
+    <ClCompile Include="src\blending.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\10.2.border.fs" />
+    <None Include="shaders\10.2.stencil_test.fs" />
+    <None Include="shaders\10.2.stencil_test.vs" />
+    <None Include="shaders\10.3.blending_blend.fs" />
+    <None Include="shaders\10.3.blending.vs" />
+    <None Include="shaders\10.3.blending_discard.fs" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
