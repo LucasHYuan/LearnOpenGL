@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\includes\glad.c" />
-    <ClCompile Include="src\blending.cpp" />
+    <ClCompile Include="src\framebuffer_cubemap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\10.2.border.fs" />
@@ -29,6 +29,14 @@
     <None Include="shaders\10.3.blending_blend.fs" />
     <None Include="shaders\10.3.blending.vs" />
     <None Include="shaders\10.3.blending_discard.fs" />
+    <None Include="shaders\10.4.framebuffer.fs" />
+    <None Include="shaders\10.4.framebuffer.vs" />
+    <None Include="shaders\10.4.framebuffer_screen.fs" />
+    <None Include="shaders\10.4.framebuffer_screen.vs" />
+    <None Include="shaders\10.5.environment_mapping.fs" />
+    <None Include="shaders\10.5.environment_mapping.vs" />
+    <None Include="shaders\10.5.skybox.fs" />
+    <None Include="shaders\10.5.skybox.vs" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

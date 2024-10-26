@@ -21,7 +21,7 @@
     <ClCompile Include="..\includes\glad.c">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\blending.cpp">
+    <ClCompile Include="src\framebuffer_cubemap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -42,6 +42,30 @@
       <Filter>Resource Files\shaders</Filter>
     </None>
     <None Include="shaders\10.3.blending_discard.fs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.4.framebuffer.fs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.4.framebuffer.vs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.4.framebuffer_screen.fs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.4.framebuffer_screen.vs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.5.skybox.fs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.5.skybox.vs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.5.environment_mapping.fs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.5.environment_mapping.vs">
       <Filter>Resource Files\shaders</Filter>
     </None>
   </ItemGroup>
