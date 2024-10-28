@@ -21,7 +21,7 @@
     <ClCompile Include="..\includes\glad.c">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\framebuffer_cubemap.cpp">
+    <ClCompile Include="src\GeometryShader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,9 +30,6 @@
       <Filter>Resource Files\shaders</Filter>
     </None>
     <None Include="shaders\10.2.stencil_test.vs">
-      <Filter>Resource Files\shaders</Filter>
-    </None>
-    <None Include="shaders\10.2.border.fs">
       <Filter>Resource Files\shaders</Filter>
     </None>
     <None Include="shaders\10.3.blending_blend.fs">
@@ -66,6 +63,30 @@
       <Filter>Resource Files\shaders</Filter>
     </None>
     <None Include="shaders\10.5.environment_mapping.vs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\9.2.geometry_shader.fs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\9.2.geometry_shader.vs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\9.2.geometry_shader.gs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\9.3.default_shader.fs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\9.3.default_shader.vs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\9.3.normal_shader.fs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\9.3.normal_shader.gs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\9.3.normal_shader.vs">
       <Filter>Resource Files\shaders</Filter>
     </None>
   </ItemGroup>

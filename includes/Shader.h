@@ -11,7 +11,7 @@
 class Shader {
 public:
 	unsigned int ID;
-
+	
 	Shader(const char* vertexPath, const char* fragmentPath)
 	{
 		#pragma region read shader code from file
@@ -44,7 +44,7 @@ public:
 		}
 		const char* vShaderCode = vertexCode.c_str();
 		const char* fShaderCode = fragmentCode.c_str();
-#pragma endregion
+		#pragma endregion
 		#pragma region complie shaders and link
 		unsigned int vertex, fragment;
 		int success;
@@ -89,6 +89,57 @@ public:
 		glDeleteShader(fragment);
 		#pragma endregion
 	}
+
+	Shader(const char* vertexPath, const char* fragmentPath, const char* geometryPath) 
+	{
+		Shader shader(vertexPath, fragmentPath);
+		std::string geometryCode;
+		std::ifstream gShaderFile;
+		gShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+		try
+		{
+			gShaderFile.open(geometryPath);
+			std::stringstream gShaderStream;
+
+			gShaderStream << gShaderFile.rdbuf();
+
+			gShaderFile.close();
+			geometryCode = gShaderStream.str();
+		}
+		catch (std::ifstream::failure e)
+		{
+			std::cout << "ERROR::SHADER::FILE_NOT_SUCCESSFULLY_READ" << std::endl;
+		}
+		
+		const char* gShaderCode = geometryCode.c_str();
+		unsigned int geometry;
+		int success;
+		char infoLog[512];
+
+		geometry = glCreateShader(GL_GEOMETRY_SHADER);
+		glShaderSource(geometry, 1, &gShaderCode, NULL);
+		glCompileShader(geometry);
+
+		glGetShaderiv(geometry, GL_COMPILE_STATUS, &success);
+		if (!success)
+		{
+			glGetShaderInfoLog(geometry, 512, NULL, infoLog);
+			std::cout << "ERROR::SHADER::GEOMETRY::COMPILATION_FAILED\n" <<
+				infoLog << std::endl;
+		}
+		ID = shader.ID;
+		glAttachShader(ID, geometry);
+		glLinkProgram(ID);
+		glGetProgramiv(ID, GL_LINK_STATUS, &success);
+		if (!success)
+		{
+			glGetProgramInfoLog(ID, 512, NULL, infoLog);
+			std::cout << "ERROR::SHADER::PROGRAM::LINK_FAILED\n" <<
+				infoLog << std::endl;
+		}
+		glDeleteShader(geometry);
+	}
+
 	void use()
 	{
 		glUseProgram(ID);
