@@ -47,11 +47,12 @@ class Model {
 public:
 	Model(char* path);
 	void Draw(Shader& shader);
+	std::vector<Mesh> getMeshes();
+	std::vector<Texture> textures_loaded;
 private:
 	std::vector<Mesh> meshes;
 	std::string directory;
-	std::vector<Texture> textures_loaded;
-
+	
 	void loadModel(std::string path);
 	void processNode(aiNode *node, const aiScene *scene);
 	Mesh processMesh(aiMesh* mesh, const aiScene* scene);
@@ -60,6 +61,9 @@ private:
 };
 
 Model::Model(char* path) { loadModel(path); }
+
+std::vector<Mesh> Model::getMeshes() { return meshes; }
+
 
 void Model::Draw(Shader& shader) 
 {
@@ -157,6 +161,10 @@ Mesh Model::processMesh(aiMesh* mesh, const aiScene* scene)
 		textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
 		std::vector<Texture> specularMaps = loadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
 		textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
+		std::vector<Texture> normalMaps = loadMaterialTextures(material, aiTextureType_HEIGHT, "texture_normal");
+		textures.insert(textures.end(), normalMaps.begin(), normalMaps.end());
+		std::vector<Texture> heightMaps = loadMaterialTextures(material, aiTextureType_AMBIENT, "texture_height");
+		textures.insert(textures.end(), heightMaps.begin(), heightMaps.end());
 	}
 
 	Mesh nmesh(vertices, indices, textures);
@@ -196,7 +204,7 @@ std::vector<Texture> Model::loadMaterialTextures(aiMaterial* mat,
 			// assume that texture file paths are local to the model object
 			texture.id = TextureFromFile(str.C_Str(), directory);
 			texture.type = typeName;
-			texture.path = str;
+			texture.path = str.C_Str();
 			textures.push_back(texture);
 			textures_loaded.push_back(texture);
 		}

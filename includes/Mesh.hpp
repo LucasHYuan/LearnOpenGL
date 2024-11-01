@@ -27,10 +27,17 @@ public:
 	std::vector<Texture> textures;
 	Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures);
 	void Draw(Shader &shader);
+	unsigned int getVAO();
+	unsigned int getVBO();
+	unsigned int getEBO();
 private:
 	unsigned int VAO, VBO, EBO;
 	void setupMesh();
 };
+
+
+
+
 
 Mesh::Mesh(std::vector<Vertex> vertices,
 	std::vector<unsigned int> indices,
@@ -65,6 +72,21 @@ inline void Mesh::Draw(Shader& shader)
 	glBindVertexArray(VAO);
 	glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
+}
+
+inline unsigned int Mesh::getVAO()
+{
+	return VAO;
+}
+
+inline unsigned int Mesh::getVBO()
+{
+	return VBO;
+}
+
+inline unsigned int Mesh::getEBO()
+{
+	return EBO;
 }
 
 inline void Mesh::setupMesh()

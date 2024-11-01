@@ -21,7 +21,7 @@
     <ClCompile Include="..\includes\glad.c">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\GeometryShader.cpp">
+    <ClCompile Include="src\Instancing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -87,6 +87,18 @@
       <Filter>Resource Files\shaders</Filter>
     </None>
     <None Include="shaders\9.3.normal_shader.vs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.3.asteroids.fs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.3.asteroids.vs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.3.planets.fs">
+      <Filter>Resource Files\shaders</Filter>
+    </None>
+    <None Include="shaders\10.3.planets.vs">
       <Filter>Resource Files\shaders</Filter>
     </None>
   </ItemGroup>
